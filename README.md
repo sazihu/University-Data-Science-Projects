@@ -2,9 +2,9 @@
 This project analyzes developement using Python, Pandas, Matplotlib.
 
 ## Technologies used:
-*Python 3
-*Pandas(Data Manipulation)
-*Matplotlib (Data Visualization)
+* Python 3
+* Pandas(Data Manipulation)
+* Matplotlib (Data Visualization)
 
 ## Key Features
 * Data cleaning and string manipulation
