@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1><b>MULTICHOICE QUESTION AND ANSWER</b></h1>
+
+<div class="app">
+  <form id="quizForm">
+    <ol>
+      <li>What is the capital of Nigeria?</li>
+      <label>Choose an option:</label>
+      <select name="option" id="pick">
+        <option value="Abuja">Abuja</option>
+        <option value="Rome">Rome</option>
+        <option value="Paris">Paris</option>
+        <option value="Benin">Benin</option>
+      </select>
+    </ol>
+    <button type="button" onclick="checkAnswer()">Submit</button>
+  </form>
+  <p id="result"></p>
+</div>
+
+<script>
+function checkAnswer() {
+  var selectedOption = document.getElementById("pick").value;
+  var correctAnswer = "Abuja"; 
+
+  if (selectedOption === correctAnswer) {
+    document.getElementById("result").innerHTML = "Correct!";
+  } else {
+    document.getElementById("result").innerHTML = "Incorrect. Try again.";
+  }
+}
+</script>
+
+</body>
+</html>

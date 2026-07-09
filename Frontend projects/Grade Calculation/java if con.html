@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+
+<h1>SCORING</h1>
+<p>student scores</p>
+<label for="name">SCORE INPUT</label>
+<input ="text" id="score">
+<button onclick="calculateGrade()">Calculate grade</button>
+<p id="demo"></p>
+<script>
+function calculateGrade() {
+var score = document.getElementById("score").value;
+if (score >= 70) {
+   var grade = "A";
+} else if (score >= 60) {
+   var grade = "B";
+} else if (score >= 50){
+   var grade = "c";   
+} else if (score >= 30) {
+   var grade = "D";
+} else
+   var grade = "E";
+document.getElementById("demo").innerHTML = grade;
+}
+</script>
+
+</body>
+</html>

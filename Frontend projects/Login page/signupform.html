@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .error {
+      border: 2px solid red;
+    }
+  </style>
+</head>
+
+<body style="background-color: RGB(240, 242, 245);">
+  <div class="formbox">
+    <form>
+      <p><b>Sign Up</b></p>
+      <p>its quick and easy</p>
+      <input type="text" size="20" id="email" value="Email" onkeyup="checkemail();" /><span id='sp1'> </span>
+      <br><br>
+      <input type="text" size="46" id="pword" value="Password" onkeyup="checkpassword();" /><span id='sp2'> </span>
+      <br><br>
+      <input type="text" size="46" id="cpword" value="Confirm password" onkeyup="checkconfirm();" /><span id='sp3'> </span>
+      <br><br>
+      Date of birth?
+      <br>
+      <select name="day">
+        <!-- Day options here -->
+      </select>
+      <select name="month">
+        <!-- Month options here -->
+      </select>
+      <select name="year">
+        <!-- Year options here -->
+      </select>
+      <br><br>
+      Female<input type="radio" name="gender" value="female">
+      Male<input type="radio" name="gender" value="male">
+      Custom<input type="radio" name="gender" value="custom">
+      <br><br>
+      <input type='submit' id='sm' disabled value='Sign Up' />
+    </form>
+  </div>
+
+  <script>
+    var checkemail = function() {
+      var email = document.getElementById('email').value;
+      var inputElement = document.getElementById('email');
+
+      if (email.search(/[.@]/) == -1) {
+        document.getElementById('sp1').innerHTML = 'Invalid Email';
+        document.getElementById('sp1').style.color = 'red';
+        inputElement.classList.add("error");
+      } else {
+        document.getElementById('sp1').innerHTML = '';
+        inputElement.classList.remove("error");
+      }
+    }
+
+    var checkpassword = function() {
+      var pword = document.getElementById('pword').value;
+      var cpword = document.getElementById('cpword').value;
+      var pwordInput = document.getElementById('pword');
+
+      if (pword.search(/[A-Z]/) == -1) {
+        document.getElementById('sp2').innerHTML = 'Password must contain an uppercase';
+        document.getElementById('sp2').style.color = 'red';
+        pwordInput.classList.add("error");
+      } else if (pword.search(/[0-9]/) == -1) {
+        document.getElementById('sp2').innerHTML = 'Password must contain a number';
+        document.getElementById('sp2').style.color = 'red';
+        pwordInput.classList.add("error");
+      } else if (pword.search(/[!#@$%^.? ]/) == -1) {
+        document.getElementById('sp2').innerHTML = 'Password must contain a special character';
+        document.getElementById('sp2').style.color = 'red';
+        pwordInput.classList.add("error");
+      } else {
+        document.getElementById('sp2').innerHTML = '';
+        pwordInput.classList.remove("error");
+      }
+    }
+
+    var checkconfirm = function() {
+      var pword = document.getElementById('pword').value;
+      var cpword = document.getElementById('cpword').value;
+      var cpwordInput = document.getElementById('cpword');
+
+      if (pword !== cpword) {
+        document.getElementById('sp3').innerHTML = 'Password does not match';
+        document.getElementById('sp3').style.color = 'red';
+        cpwordInput.classList.add("error");
+      } else {
+        document.getElementById('sp3').innerHTML = '';
+        cpwordInput.classList.remove("error");
+        document.getElementById('sm').disabled = false;
+      }
+    }
+  </script>
+
+</body>
+
+</html>
+
